@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Request, status
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter
+from typing import Any
+
 
 router = APIRouter(
     prefix="/healthcheck",
@@ -7,17 +8,17 @@ router = APIRouter(
 )
 
 
-@router.get("/ping")
-async def ping() -> JSONResponse:
+@router.get("/ping", status_code=200)
+async def ping() -> str:
     """
     Health ping-pong endpoint
     """
-    return JSONResponse(status_code=status.HTTP_200_OK, content={"answer": "pong"})
+    return "pong"
 
 
-@router.post("/echo")
-async def echo(request: Request) -> JSONResponse:
+@router.post("/echo", status_code=200)
+async def echo(request: Any) -> Any:
     """
     Health echo endpoint
     """
-    return JSONResponse(status_code=status.HTTP_200_OK, content=await request.json())
+    return request
