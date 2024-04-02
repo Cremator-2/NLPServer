@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 
 router = APIRouter(
     prefix="/healthcheck",
-    tags=["healthcheck"],
+    tags=["Healthcheck"],
 )
 
 
