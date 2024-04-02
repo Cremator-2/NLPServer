@@ -4,11 +4,16 @@ import uvicorn
 from fastapi import FastAPI
 
 from api import healthcheck_router
+from logger import get_logger
+
+logger = get_logger(__name__)
 
 
 @asynccontextmanager
 async def lifespan(_):
+    logger.info("Start API")
     yield
+    logger.info("Stop API")
 
 app = FastAPI(lifespan=lifespan)
 
