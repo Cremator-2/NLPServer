@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import Any
 
-from app.logger import get_logger
+from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
 

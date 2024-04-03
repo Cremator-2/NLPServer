@@ -22,7 +22,7 @@ class CustomFormatter(logging.Formatter):
     cb = "] "
 
     level_name = level_name + end
-    message = bold + message + end
+    message = bold + '"' + message + '"' + end
     asctime = ob + c + asctime + end + cb
 
     constructor = name + hyp + message + asctime

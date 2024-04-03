@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 
 from app.api import healthcheck_router
-from app.logger import get_logger
+from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
