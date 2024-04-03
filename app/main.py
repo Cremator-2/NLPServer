@@ -24,9 +24,9 @@ app.include_router(healthcheck_router)
 if __name__ == "__main__":
     uvicorn.run(
         app,
-        host=settings.SERVER_HOST,
-        port=settings.SERVER_PORT,
+        host="0.0.0.0",
+        port=8001,
         log_level=settings.LOGGING_LEVEL.lower(),
-        forwarded_allow_ips=settings.FORWARDED_ALLOW_IPS,
-        proxy_headers=settings.PROXY_HEADERS,
+        forwarded_allow_ips="*",
+        proxy_headers=True,
     )

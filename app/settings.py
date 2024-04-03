@@ -7,11 +7,6 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     PROJECT_NAME: str = Field(default="NLPServer", description="The name of project")
 
-    SERVER_HOST: str = Field(default="0.0.0.0", description="")
-    SERVER_PORT: int = Field(default=8001, description="")
-    FORWARDED_ALLOW_IPS: str = Field(default="*", description="")
-    PROXY_HEADERS: bool = Field(default=True, description="")
-
     SEED: int = Field(default=42, description="The seed to use for the GPT model")
 
     MONGO_URI: str = Field(default=..., description="The URI of the MongoDB database")
