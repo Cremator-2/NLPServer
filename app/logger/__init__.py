@@ -17,7 +17,6 @@ class CustomFormatter(logging.Formatter):
     message = "%(message)s"
     asctime = "%(asctime)s"
 
-    ind = ":\t  "
     hyp = " - "
     ob = " ["
     cb = "] "
@@ -26,14 +25,14 @@ class CustomFormatter(logging.Formatter):
     message = bold + message + end
     asctime = ob + c + asctime + end + cb
 
-    constructor = level_name + ind + name + hyp + message + asctime
+    constructor = name + hyp + message + asctime
 
     FORMATS = {
-        logging.DEBUG: b + constructor,
-        logging.INFO: g + constructor,
-        logging.WARNING: y + constructor,
-        logging.ERROR: r + constructor,
-        logging.CRITICAL: r + bold + constructor,
+        logging.DEBUG: b + level_name + ":    " + constructor,
+        logging.INFO: g + level_name + ":     " + constructor,
+        logging.WARNING: y + level_name + ":  " + constructor,
+        logging.ERROR: r + level_name + ":    " + constructor,
+        logging.CRITICAL: r + bold + level_name + ": " + constructor,
     }
 
     def format(self, record):
