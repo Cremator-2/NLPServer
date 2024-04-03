@@ -7,3 +7,4 @@ ENV
 .venv
 .test
 .env
+.reviewer

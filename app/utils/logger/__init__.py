@@ -5,11 +5,11 @@ from app.settings import settings
 
 class CustomFormatter(logging.Formatter):
 
-    c = "\x1b[36;21m"
-    g = "\x1b[32;21m"
-    y = "\x1b[33;21m"
-    r = "\x1b[31;21m"
-    b = "\x1b[34;21m"
+    c = "\x1b[36m"
+    g = "\x1b[32m"
+    y = "\x1b[33m"
+    r = "\x1b[31m"
+    b = "\x1b[34m"
 
     bold = "\033[1m"
     end = "\x1b[0m"
