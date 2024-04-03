@@ -1,5 +1,7 @@
 import logging
 
+from app.settings import settings
+
 
 class CustomFormatter(logging.Formatter):
 
@@ -41,7 +43,7 @@ class CustomFormatter(logging.Formatter):
         return formatter.format(record)
 
 
-def get_logger(name: str, log_level: int = logging.INFO) -> logging.Logger:
+def get_logger(name: str, log_level: int = settings.LOGGING_LEVEL) -> logging.Logger:
     logger = logging.getLogger(name)
     logger.setLevel(log_level)
     logger.propagate = False
