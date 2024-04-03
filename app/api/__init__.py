@@ -1,1 +1,1 @@
-from .healthcheck.routes import router as healthcheck_router
+from .api_v1 import *

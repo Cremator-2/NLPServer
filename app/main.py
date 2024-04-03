@@ -3,9 +3,10 @@ from contextlib import asynccontextmanager
 import uvicorn
 from fastapi import FastAPI
 
-from app.api import healthcheck_router
-from app.settings import settings
-from app.utils.logger import get_logger
+from api import healthcheck_router
+from routers import plot_router, page_router
+from core.config import settings
+from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -19,6 +20,8 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(healthcheck_router)
+app.include_router(plot_router)
+app.include_router(page_router)
 
 
 if __name__ == "__main__":

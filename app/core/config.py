@@ -16,15 +16,17 @@ class Settings(BaseSettings):
 
     ENVIRONMENT: str = Field(default="local", description="The environment to run server")
 
+    URL: str = Field(default=..., description="Server URL")
+
     @staticmethod
-    @field_validator('MONGO_URI', 'MONGO_DB_NAME')
+    @field_validator('MONGO_URI', 'MONGO_DB_NAME', 'URL')
     def check_not_empty(value, field):
         if not value.strip():
             raise ValueError(f"{field.name} must not be empty")
         return value
 
     class Config:
-        env_file: List[str] = ['.env', '../.env']
+        env_file: List[str] = ['.env', '../.env', '../../.env']
         env_file_encoding = 'utf-8'
 
 
