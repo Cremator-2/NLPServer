@@ -18,7 +18,9 @@
 │    │    └─── plot_router.py
 │    ├─── static/
 │    │    ├─── pages/
+│    │    │    └─── example_chat.html
 │    │    └─── plots/
+│    │         └─── example_plot.html
 │    ├─── templates/
 │    ├─── tests/
 │    │    └─── healthcheck.py
