@@ -7,8 +7,7 @@
 │    ├─── api/
 │    │    ├─── api_v1/
 │    │    │    ├─── healthcheck/
-│    │    │    │    └─── routes.py
-│    │    │    ├─── webhook/
+│    │    │    │    ├─── models.py
 │    │    │    │    └─── routes.py
 │    │    │    └─── __init__.py
 │    │    └─── __init__.py
@@ -24,8 +23,7 @@
 │    │    └─── plots/
 │    │         └─── example_plot.html
 │    ├─── tests/
-│    │    ├─── healthcheck.py
-│    │    └─── send_webhook.py
+│    │    └─── healthcheck.py
 │    ├─── utils/
 │    │    └─── logger/
 │    │         ├─── __init__.py

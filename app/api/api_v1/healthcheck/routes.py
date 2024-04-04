@@ -1,7 +1,9 @@
-from fastapi import APIRouter
 from typing import Any
 
-from models import successful_response_example_any
+from fastapi import APIRouter, status
+from fastapi.responses import PlainTextResponse
+
+from .models import example_ping
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -12,16 +14,16 @@ router = APIRouter(
 )
 
 
-@router.get("/ping", status_code=200)
+@router.get("/ping", status_code=status.HTTP_200_OK, response_class=PlainTextResponse, responses=example_ping)
 async def ping() -> str:
     """
     Health ping-pong endpoint
     """
     logger.info("The ping pong endpoint was called")
-    return "pong"
+    return "Pong"
 
 
-@router.post("/echo", status_code=200, responses=successful_response_example_any)
+@router.post("/echo", status_code=status.HTTP_200_OK)
 async def echo(request: Any) -> Any:
     """
     Health echo endpoint

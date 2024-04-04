@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 import uvicorn
 from fastapi import FastAPI
 
-from api import healthcheck_router, webhook_router
+from api import healthcheck_router
 from routers import plot_router, page_router
 from core.config import settings
 from utils.logger import get_logger
@@ -20,7 +20,6 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(healthcheck_router)
-app.include_router(webhook_router)
 app.include_router(plot_router)
 app.include_router(page_router)
 

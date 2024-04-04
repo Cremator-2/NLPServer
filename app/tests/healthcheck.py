@@ -1,14 +1,14 @@
 import requests
 
 from core.config import settings
-from models import example_dict
 
 BASE_URL = settings.URL + "/healthcheck"
 
 
 def test_ping():
     response = requests.get(f"{BASE_URL}/ping")
-    print("Ping Response:", response.json())
+    print("Ping Status:", response.status_code)
+    print("Ping Response:", response.text)
 
 
 def test_echo(data):
@@ -22,9 +22,6 @@ if __name__ == "__main__":
     item = "Hello!"
     test_echo(item)
 
-    item = list("World!")
-    test_echo(item)
-
-    item = example_dict
+    item = {"key": "value"}
     test_echo(item)
 
