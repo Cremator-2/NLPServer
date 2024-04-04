@@ -1,4 +1,3 @@
-import json
 import requests
 
 from core.config import settings

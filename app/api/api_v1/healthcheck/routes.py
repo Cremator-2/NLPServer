@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from typing import Any
 
+from models import successful_response_example_any
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -20,7 +21,7 @@ async def ping() -> str:
     return "pong"
 
 
-@router.post("/echo", status_code=200)
+@router.post("/echo", status_code=200, responses=successful_response_example_any)
 async def echo(request: Any) -> Any:
     """
     Health echo endpoint
