@@ -13,6 +13,9 @@ router = APIRouter(
 
 @router.get("/example", response_class=HTMLResponse)
 async def example_chat():
+    """
+    Example chat page
+    """
     try:
         return HTMLResponse(content=open("static/pages/example_chat.html", encoding="utf-8").read())
     except FileNotFoundError:

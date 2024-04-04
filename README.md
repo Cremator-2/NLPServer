@@ -8,6 +8,8 @@
 │    │    ├─── api_v1/
 │    │    │    ├─── healthcheck/
 │    │    │    │    └─── routes.py
+│    │    │    ├─── webhook/
+│    │    │    │    └─── routes.py
 │    │    │    └─── __init__.py
 │    │    └─── __init__.py
 │    ├─── core/
@@ -21,9 +23,9 @@
 │    │    │    └─── example_chat.html
 │    │    └─── plots/
 │    │         └─── example_plot.html
-│    ├─── templates/
 │    ├─── tests/
-│    │    └─── healthcheck.py
+│    │    ├─── healthcheck.py
+│    │    └─── send_webhook.py
 │    ├─── utils/
 │    │    └─── logger/
 │    │         ├─── __init__.py
