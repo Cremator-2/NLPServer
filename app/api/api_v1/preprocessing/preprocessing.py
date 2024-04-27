@@ -4,8 +4,6 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from bs4 import BeautifulSoup
 
-# nltk.download('stopwords')
-
 
 class TextPreprocessor:
     def __init__(self):
