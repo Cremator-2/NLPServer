@@ -1,5 +1,4 @@
 from typing import Any
-
 from fastapi import APIRouter, status
 from fastapi.responses import PlainTextResponse
 
