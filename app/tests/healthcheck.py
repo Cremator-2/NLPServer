@@ -24,4 +24,3 @@ if __name__ == "__main__":
 
     item = {"key": "value"}
     test_echo(item)
-
