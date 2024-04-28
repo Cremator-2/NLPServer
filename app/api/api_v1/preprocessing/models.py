@@ -8,5 +8,8 @@ example_response = {
                 "example": "sure would like see resurrect date seahunt seri tech today would bring back kid excit mei grew black white tv seahunt gunsmok hero everi weekyou vote comeback new sea huntw need chang pace tv would work world water adventureoh way thank outlet like view mani viewpoint tv mani moviesso ole way believ ive got wan na saywould nice read plu point sea huntif rhyme would 10 line would let submitor leav doubt quitif must go let"
             }
         }
+    },
+    400: {
+        "description": "No text provided for preprocessing or invalid methods."
     }
 }

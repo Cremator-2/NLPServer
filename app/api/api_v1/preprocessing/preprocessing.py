@@ -16,7 +16,7 @@ class TextPreprocessor:
         return soup.get_text()
 
     @staticmethod
-    def to_lowercase( text):
+    def to_lowercase(text):
         return text.lower()
 
     @staticmethod
@@ -37,11 +37,20 @@ class TextPreprocessor:
         stemmed_text = [self.stemmer.stem(word) for word in text_tokens]
         return ' '.join(stemmed_text)
 
-    def preprocess(self, text):
-        text = self.remove_html_tags(text)
-        text = self.to_lowercase(text)
-        text = self.remove_urls(text)
-        text = self.remove_punctuation(text)
-        text = self.remove_stop_words(text)
-        text = self.stem_text(text)
+    def preprocess(self, text, methods=None):
+        if methods is None:
+            methods = ['html', 'lowercase', 'urls', 'punctuation', 'stopwords', 'stemming']
+
+        if 'html' in methods:
+            text = self.remove_html_tags(text)
+        if 'lowercase' in methods:
+            text = self.to_lowercase(text)
+        if 'urls' in methods:
+            text = self.remove_urls(text)
+        if 'punctuation' in methods:
+            text = self.remove_punctuation(text)
+        if 'stopwords' in methods:
+            text = self.remove_stop_words(text)
+        if 'stemming' in methods:
+            text = self.stem_text(text)
         return text
