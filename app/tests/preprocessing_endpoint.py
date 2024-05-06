@@ -2,7 +2,7 @@ import requests
 
 from core.config import settings
 
-BASE_URL = settings.URL + "/preprocessing"
+BASE_URL = settings.URL + "/processing/preprocessing"
 
 
 def test_preprocessing(text, methods=None):

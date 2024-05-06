@@ -1,4 +1,4 @@
-from api.api_v1.preprocessing.preprocessing import TextPreprocessor
+from api.api_v1.processing.processing import TextPreprocessor
 
 
 preprocessor = TextPreprocessor()
