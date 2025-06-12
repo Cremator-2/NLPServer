@@ -13,6 +13,7 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
+
 @asynccontextmanager
 async def lifespan(_):
     nltk.download('stopwords')
